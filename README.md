@@ -1,33 +1,46 @@
-
-<h3 align="center">
-    <img alt="Happy" title="Happy" width="128px" src="./frontend/src/images/logo.svg">
-</h3>
-
 <h1 align="center">
-Happy
+    <img alt="Happy" title="Happy" src="./frontend/src/images/logo_2.svg" />
 </h1>
 
-<p align="center" style="width: 70%; margin: 20px auto;">
-    This project was develop at Rocketseat's Next Level Week event during five days (10/12 to 10/16) about Children's day. Use it as you like, It is open-source :)
+<p align="center">
+  <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-layout">Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#memo-licença">Licença</a>
 </p>
 
-<h1 align="center">
-    <img src="./frontend/src/images/print.png" />
-</h1>
+<p align="center">
+ <img src="https://img.shields.io/static/v1?label=PRs&message=welcome&color=15C3D6&labelColor=000000" alt="PRs welcome!" />
 
-## Menu
-- [Technologies](#-tecnhnologies)
-- [How to use](#-how-to-use)
+  <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=15C3D6&labelColor=000000">
+</p>
 
----
+<br>
 
-## 🚀 Technologies
+<p align="center">
+  <img alt="Happy" src="./frontend/src/images/happy.png" width="100%">
+</p>
 
-This project was developed at Rocketseat's Next Level Week event!
+## 🚀 Tecnologias
 
-- [ReactJS]()
-- [React Leaflet]()
-- [Styled Components]()
+Esse projeto foi desenvolvido com as seguintes tecnologias:
+
+- [Node.js](https://nodejs.org/en/)
+- [React](https://reactjs.org)
+- [React Native](https://facebook.github.io/react-native/)
+- [Expo](https://expo.io/)
+- [TypeScript](https://www.typescriptlang.org/)
+
+## 💻 Projeto
+
+O Happy é uma aplicação que conecta pessoas à casas de acolhimento institucional para fazer o dia de muitas crianças mais feliz 💜
+
+## 🔖 Layout
+
+Nos links abaixo você encontra o layout do projeto web e também do mobile. Lembrando que você precisa ter uma conta no [Figma](http://figma.com/) para acessá-lo.
+
+- [Layout Web](https://www.figma.com/file/mDEbnoojksG4w8sOxmudh3/Happy-Web)
+- [Layout Mobile](https://www.figma.com/file/X27FfVxAgy9f5IFa7ONlph/Happy-Mobile)
 
 ## 🖥 How to use
 
@@ -46,7 +59,30 @@ $ git clone https://github.com/dougphaney/nlw-orphanage
 
 # Enter on folder
 $ cd nlw-orphanage/frontend
+
+# Then, install project's dependencies
+$ yarn
+# or 
+$ npm install
+
+# Start application
+$ yarn start 
+# or
+$ npm start
+
 $ cd nlw-orphanage/backend
+
+# Then, install project's dependencies
+$ yarn
+# or 
+$ npm install
+# Start application
+
+$ yarn dev 
+# or
+$ npm dev
+
+$ cd nlw-orphanage/mobile
 
 # Then, install project's dependencies
 $ yarn
@@ -60,9 +96,6 @@ $ npm start
 
 # After that, a web page will be open on your main browser, enjoy!
 ```
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-To learn React, check out the [React documentation](https://reactjs.org/).
 
 ## 📃 License
 
