@@ -7,6 +7,7 @@ import { RectButton } from 'react-native-gesture-handler';
 import api from '../services/api';
 
 import mapMarkerImg from '../images/map-marker.png';
+import Loading from "../components/loading";
 
 interface OrphanageDetailsRouteParams {
   id: number;
@@ -40,11 +41,10 @@ export default function OrphanageDetails() {
   }, [params.id]);
 
   if (!orphanage) {
+  
     return (
-      <View style={ styles.container }>
-        <Text style={ styles.description }>Loading...</Text>
-      </View>
-    )
+      <Loading />
+    );
   }
 
   function handleOpenGoogleMapRoutes() {
