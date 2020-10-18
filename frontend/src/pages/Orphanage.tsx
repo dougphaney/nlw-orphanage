@@ -138,7 +138,6 @@ export default function Orphanage() {
               </div>
               ) } 
             </div>
-<<<<<<< HEAD
             
             <button
               key={ orphanage.whatsapp }
@@ -146,10 +145,6 @@ export default function Orphanage() {
               className="contact-button"
               onClick={ handleOpenWhatsApp }
               >
-=======
-
-            <button type="button" className="contact-button">
->>>>>>> fe8cec727b6f4bde1339eb039f0e3e17731e9975
               <FaWhatsapp size={20} color="#FFF" />
               Entrar em contato
             </button>
