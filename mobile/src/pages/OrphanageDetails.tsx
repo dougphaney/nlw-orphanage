@@ -21,11 +21,7 @@ interface Orphanage {
   instructions: string;
   opening_hours: string;
   open_on_weekends: boolean;
-<<<<<<< HEAD
   whatsapp: string;
-=======
-  whatsapp  : boolean;
->>>>>>> fe8cec727b6f4bde1339eb039f0e3e17731e9975
   images: Array<{ 
     id: number;  
     url: string ;
@@ -138,11 +134,7 @@ export default function OrphanageDetails() {
 
         </View>
 
-<<<<<<< HEAD
         <RectButton style={styles.contactButton} onPress={ handleOpenWhatsApp }>
-=======
-        <RectButton style={styles.contactButton} onPress={() => {}}>
->>>>>>> fe8cec727b6f4bde1339eb039f0e3e17731e9975
           <FontAwesome name="whatsapp" size={24} color="#FFF" />
           <Text style={styles.contactButtonText}>Entrar em contato</Text>
         </RectButton>
