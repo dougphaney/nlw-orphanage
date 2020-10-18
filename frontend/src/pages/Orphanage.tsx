@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-// import { FaWhatsapp } from "react-icons/fa";
+import { FaWhatsapp } from "react-icons/fa";
 import { FiClock, FiInfo } from "react-icons/fi";
 import { Map, Marker, TileLayer } from "react-leaflet";
 import { useParams } from "react-router-dom";
@@ -18,9 +18,10 @@ interface Orphanage {
   instructions: string;
   opening_hours: string;
   open_on_weekends: string;
+  whatsapp: string;
   images: Array<{ 
     id: number;  
-    url: string ;
+    url: string;
   }>;
 }
 
@@ -32,17 +33,21 @@ export default function Orphanage() {
   const params = useParams<OrphanageParams>();
   const [orphanage, setOrphanage] = useState<Orphanage>();
   const [activeImageIndex, setActiveImageIndex] = useState(0);
-
+  
   useEffect(() => {
     api.get(`orphanages/${ params.id }`).then(response => {
       setOrphanage(response.data);
     });
   }, [params.id]);
-
+  
   if (!orphanage) {
     return <p>Loading...</p>
   }
 
+  function handleOpenWhatsApp() {
+    return (`https://wa.me/55${ orphanage?.whatsapp.replace(/([^\d])+/gim, '')}`)
+  }
+  
   return (
     <div id="page-orphanage">
       <Sidebar /> 
@@ -54,23 +59,24 @@ export default function Orphanage() {
           <div className="images">
            { orphanage.images.map((image, index) => {
              return (
-              <button 
-                // Key={ image.id } 
+               <button 
+              //  Key={ image.id } 
                 className={activeImageIndex === index ? 'active' : ''} 
                 type="button"
-                onClick={() => {
+                onClick={ () => {
                   setActiveImageIndex(index);
                 }}
-              >
+                >
                 <img src={ image.url } alt={ orphanage.name } />
               </button>
              );
-           })}
+            })}
           </div>
           
           <div className="orphanage-details-content">
             <h1>{ orphanage.name }</h1>
             <p>{ orphanage.about }</p>
+            <p>{ orphanage.whatsapp }</p>
 
             <div className="map-container">
               <Map 
@@ -82,17 +88,17 @@ export default function Orphanage() {
                 zoomControl={false}
                 scrollWheelZoom={false}
                 doubleClickZoom={false}
-              >
+                >
                 <TileLayer 
                   // url={`https://api.mapbox.com/styles/v1/mapbox/light-v10/tiles/256/{z}/{x}/{y}@2x?access_token=${process.env.REACT_APP_MAPBOX_TOKEN}`}
                   url="https://a.tile.openstreetmap.org/{z}/{x}/{y}.png" 
-                />
+                  />
 
                 <Marker 
                   interactive={false} 
                   icon={mapIcon} 
                   position={[orphanage.latitude, orphanage.longitude]} 
-                />
+                  />
                 
               </Map>
 
@@ -101,7 +107,7 @@ export default function Orphanage() {
                   target="_blank"
                   rel="noopener noreferrer"
                   href={`https://www.google.com.br/maps/dir/?api=1&destination=${ orphanage.latitude },${ orphanage.longitude }`}
-                >
+                  >
                   Ver rotas no Google Maps
                 </a>
               </footer>
@@ -132,11 +138,16 @@ export default function Orphanage() {
               </div>
               ) } 
             </div>
-
-            {/* <button type="button" className="contact-button">
+            
+            <button
+              key={ orphanage.whatsapp }
+              type="button" 
+              className="contact-button"
+              onClick={ handleOpenWhatsApp }
+              >
               <FaWhatsapp size={20} color="#FFF" />
               Entrar em contato
-            </button> */}
+            </button>
           </div>
         </div>
       </main>
